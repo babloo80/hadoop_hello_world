@@ -24,6 +24,7 @@ public class Executor {
     jobConf.setOutputFormat(TextOutputFormat.class);
 
     jobConf.setMapperClass(WCMapper.class);
+    jobConf.setCombinerClass(WCReducer.class);
     jobConf.setReducerClass(WCReducer.class);
 
     FileInputFormat.addInputPath(jobConf, new Path(Executor.class.getResource("/sample_doc.txt").getFile()));
